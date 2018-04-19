@@ -1,0 +1,14 @@
+.box {
+    position: relative;
+    margin: 50px auto;
+    width: 350px;
+    height: 500px;
+    border: 1px solid silver;
+    border-radius: 10px;
+}
+
+.box h2 {
+    text-align: center;
+    font-size: 18px;
+    color: blue;
+}
