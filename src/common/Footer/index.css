@@ -8,7 +8,9 @@
    border-top: 2px solid silver;  
 }
 
-.footer button {
+.footer a {
+    text-decoration: none;
+    color: blue;
     margin: 0 25px;
     align-self: center;
 }

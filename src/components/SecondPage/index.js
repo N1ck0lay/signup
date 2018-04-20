@@ -9,25 +9,23 @@ import Footer from '../../common/Footer'
 
 // import './index.css'
 
-class FirstPage extends Component {
+class SecondPage extends Component {
     render() {
         return (
             <Box header="Signup">
-                <ProgressBar progress={33} />
+                <ProgressBar progress={66} />
                 <Body>
-                    <form>
-                        <Input label="email" name="email" />
-                        <Input label="password" name="password" />
-                        <Input label="confirm password" name="password2" />
-                    </form>
+                    <div>date of birth</div>
+                    <div>gender</div>
+                    <div>where did you hear about us</div>
                 </Body>
                 <Footer>
-                    <div></div>
-                    <Link to='/second'>Next</Link>
+                <Link to='/'>Back</Link>
+                <Link to='/third'>Next</Link>
                 </Footer>
             </Box>
         )
     }
 }
 
-export default FirstPage
+export default SecondPage
