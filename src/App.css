@@ -1,3 +1,16 @@
 .App {
 
 }
+
+.error {
+    color: red;
+}
+
+.center {
+    text-align: center;
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+}

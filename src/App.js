@@ -13,7 +13,7 @@ import './App.css';
 
 class App extends Component {
     render() {
-        console.log('testVar', this.props.testVar.test)
+        // console.log('testVar', this.props.testVar.test)
         return (
             <div className="App">
                 <BrowserRouter>

@@ -1,6 +1,7 @@
 .bar {
     width: 100%;
-    border: 1px solid silver;
+    border-top: 1px solid silver;
+    border-bottom: 1px solid silver;
 }
 
 .progress {

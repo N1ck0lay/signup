@@ -1,0 +1,17 @@
+.second {
+
+}
+
+.second input[type="number"] {
+    width: 100%;
+    height: 30px;
+    text-align: center;
+}   
+
+.second .input {
+    flex: 1 1 33%; /* explanation below */
+    /* height: 100px; */
+    height: 30px;
+    /* background-color: blue; */
+    margin: 0 0 50px;
+}
