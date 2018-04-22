@@ -1,16 +1,18 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import { connect } from 'react-redux'
 
 import Box from '../../common/Box'
 import ProgressBar from '../../common/ProgressBar'
-import Input from '../../common/Input'
 import Body from '../../common/Body'
 import Footer from '../../common/Footer'
 
 // import './index.css'
 
+
 class SecondPage extends Component {
     render() {
+        console.log('haha', this.props.zzz)
         return (
             <Box header="Signup">
                 <ProgressBar progress={66} />
@@ -28,4 +30,8 @@ class SecondPage extends Component {
     }
 }
 
-export default SecondPage
+export default connect(
+    state => ({
+        zzz: state
+    })
+)(SecondPage)
