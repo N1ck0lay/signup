@@ -2,22 +2,6 @@ import React, { Component } from 'react'
 
 import './index.css'
 
-// class Input extends Component {
-//     render() {
-//         const { label, name } = this.props
-//         return (
-//             <div className="input">
-//                 <div>
-//                     <label htmlFor={name}>{label}</label>
-//                 </div>
-
-//                 <div>
-//                     <input type="text" name={name} />
-//                 </div>
-//             </div>
-//         )
-//     }
-// }
 
 const Input = ({ input, meta, label, type, placeholder }) => {
     // console.log('meta', meta)

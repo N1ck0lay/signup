@@ -10,11 +10,11 @@
 .input input[type="password"] {
     width: 100%;
     border: 0;
-    border-bottom: 2px solid silver;
+    border-bottom: 1.5px solid silver;
     transition: border-bottom 0.2s ease-out;
 }
 
 .input input[type="email"]:focus,
 .input input[type="password"]:focus {
-    border-bottom: 2px solid blue;
+    border-bottom: 1.5px solid blue;
 }

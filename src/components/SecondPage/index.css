@@ -1,6 +1,6 @@
-.second {
+/* .second {
 
-}
+} */
 
 .second input[type="number"] {
     width: 100%;
@@ -9,9 +9,7 @@
 }   
 
 .second .input {
-    flex: 1 1 33%; /* explanation below */
-    /* height: 100px; */
+    flex: 1 1 33%;
     height: 30px;
-    /* background-color: blue; */
-    margin: 0 0 50px;
+    margin: 5px 0 50px;
 }

@@ -23,7 +23,7 @@ const validate = values => {
 
 
     if (!values.password) {
-        errors.password = 'password is required'
+        errors.password = 'password is required (min 6 chars)'
     } else if (values.password.length < 6) {
         errors.password = 'password must be 6 chars or more'
     }
@@ -41,15 +41,14 @@ const validate = values => {
 
 class FirstPage extends Component {
     render() {
+        const { handleSubmit, invalid } = this.props
         return (
             <Box header="Signup">
                 <ProgressBar progress={33} />
                 <Body>
                     <div className="first">
 
-
-
-                        <form onSubmit={this.props.handleSubmit}>
+                        <form onSubmit={handleSubmit}>
 
                             <Field
                                 name="email"
@@ -72,12 +71,6 @@ class FirstPage extends Component {
                                 component={Input}
                             />
 
-
-
-                            <button type="submit" disabled={this.props.pristine || this.props.submitting}>
-                                <Link to='/second'>Next</Link>
-                            </button>
-                            <button type="submit" disabled={this.props.pristine || this.props.submitting}>OKAY</button>
                         </form>
 
 
@@ -85,7 +78,7 @@ class FirstPage extends Component {
                 </Body>
                 <Footer>
                     <div></div>
-                    <Link to='/second'>Next</Link>
+                    {invalid ? '' : <Link to='/second'>Next</Link>}
                 </Footer>
             </Box>
         )

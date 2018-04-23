@@ -32,7 +32,7 @@ class SecondPage extends Component {
 
                                 <Field
                                     name="mm"
-                                    type="number"
+                                    type="date"
                                     placeholder="MM"
                                     component={Input}
                                 />
@@ -46,13 +46,11 @@ class SecondPage extends Component {
                             </div>
 
                             <div className="center">DATE OF BIRTH</div>
-                            <div className="flex-container">
-                                <Field
-                                    name="male"
-                                    type="checkbox"
-                                    placeholder="MALE"
-                                    component={Input}
-                                />
+                            <div className="flex-container" style={{ textAlign: 'center', alignItems: 'center' }}>
+                                <div style={{ width: '33%', height: 30, border: '1px solid silver'}}>Female</div>
+                                <div style={{ width: '33%', height: 30, border: '1px solid silver'}}>Unspecified</div>
+                                <div style={{ width: '33%', height: 30, border: '1px solid silver'}}>Male</div>
+                                <input type="number" placeholder="DD" min="1" max="31"/>
                             </div>
 
                         </div>
