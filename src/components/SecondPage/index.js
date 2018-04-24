@@ -8,6 +8,7 @@ import Body from '../../common/Body'
 import Footer from '../../common/Footer'
 import BirthDate from '../../common/BirthDate'
 import Gender from '../../common/Gender'
+import Select from '../../common/Select'
 
 import validate from '../../helpers/validate'
 
@@ -29,6 +30,7 @@ class SecondPage extends Component {
                         <div className="second">
                             <BirthDate />
                             <Gender />
+                            <Select />
                         </div>
                     </form>
                 </Body>

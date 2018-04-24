@@ -25,8 +25,8 @@ class App extends Component {
                     </Switch>
                 </BrowserRouter>
             </div>
-        );
+        )
     }
 }
 
-export default connect()(App);
+export default connect()(App)

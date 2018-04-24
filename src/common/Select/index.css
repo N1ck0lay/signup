@@ -1,0 +1,10 @@
+.select p {
+    margin-top: 50px;
+}
+
+.select select {
+    width: 99.9%;
+    height: 30px;
+    outline: 0;
+    cursor: pointer;
+}

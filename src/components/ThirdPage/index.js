@@ -25,7 +25,7 @@ class ThirdPage extends Component {
                 password: storeData.password,
                 date_of_birth: 'date',
                 gender: storeData.gender,
-                how_hear_about_us: null
+                how_hear_about_us: storeData.selected_answer || null
             }
         }
 
@@ -37,7 +37,7 @@ class ThirdPage extends Component {
 
         let gender = storeData.gender
 
-
+        console.log('storeData', storeData)
         return (
             <Box header="Thank you!">
                 <ProgressBar progress={100} />

@@ -3,20 +3,13 @@ import React from 'react'
 import './index.css'
 
 
-const Input = ({ input, meta, label, type }) => {
+const Input = ({ meta: { error, touched, active }, input, label, type }) => {
     return (
         <div className="input">
-            <label className={meta.error && meta.touched && !meta.active ? 'error' : ''}>
-                {
-                    meta.error &&
-                    meta.touched &&
-                    !meta.active ? meta.error : label
-                }
+            <label className={error && touched && !active ? 'error' : ''}>
+                {error && touched && !active ? error : label}
             </label>
-            <input
-                {...input}
-                type={type}
-            />
+            <input {...input} type={type} />
         </div>
     )
 }

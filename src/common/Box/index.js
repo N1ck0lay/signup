@@ -10,7 +10,7 @@ class Box extends Component {
             <div className="box">
                 <h2>{header}</h2>
                 <div>
-                {children}
+                    {children}
                 </div>
             </div>
         )

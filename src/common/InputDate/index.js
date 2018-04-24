@@ -3,7 +3,7 @@ import React from 'react'
 import './index.css'
 
 
-const InputDate = ({ input, meta, type, placeholder, min, max }) => {
+const InputDate = ({ meta: { error, touched, active }, input, type, placeholder, min, max }) => {
     return (
         <div className="input">
             <input
@@ -14,11 +14,11 @@ const InputDate = ({ input, meta, type, placeholder, min, max }) => {
                 max={max}
                 required
             />
-            <label className={meta.error && meta.touched && !meta.active ? 'error lower-label' : ''}>
+            <label className={error && touched && !active ? 'error lower-label' : ''}>
                 {
-                    meta.error &&
-                    meta.touched &&
-                    !meta.active ? meta.error : ''
+                    error &&
+                    touched &&
+                    !active ? error : ''
                 }
             </label>
         </div>

@@ -8,7 +8,6 @@ class ProgressBar extends Component {
         return (
             <div className="bar">
                <div className="progress" style={{ width: `${progress}%`}}></div>
-               {/* <div className="progress"></div>  */}
             </div>
         )
     }

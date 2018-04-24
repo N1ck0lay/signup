@@ -3,6 +3,7 @@ import { Field } from 'redux-form'
 
 import InputDate from '../InputDate'
 
+import './index.css'
 
 const date = new Date();
 const currentYear = date.getFullYear();
@@ -10,7 +11,7 @@ const currentYear = date.getFullYear();
 
 const BirthDate = () => {
     return (
-        <div>
+        <div className="birthDate">
             <p className="center">DATE OF BIRTH</p>
             <div className="flex-container">
                 <Field

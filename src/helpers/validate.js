@@ -47,7 +47,7 @@ const validate = values => {
     if (!values.yyyy) {
         errors.yyyy = 'required'
     } else if (values.yyyy < 1900 || values.yyyy > 2018) {
-        errors.yyyy = 'are you sure?'
+        errors.yyyy = 'invalid year'
     } else {
         const userDateInput = new Date(`${values.yyyy}-${values.mm}-${values.dd}`)
         console.log('Is valid?', moment(userDateInput).isValid())
@@ -59,7 +59,7 @@ const validate = values => {
 
 
     if (!values.gender) {
-        errors.gender = 'Choose your gender'
+        errors.gender = 'choose your gender'
     }
 
     // console.log('values', { "year": Number(values.yyyy), "month": Number(values.mm) - 1, "day": Number(values.dd) })
