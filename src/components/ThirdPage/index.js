@@ -15,7 +15,7 @@ import './index.css'
 class ThirdPage extends Component {
     render() {
 
-        const storeData = store.getState().form.reactApp === undefined ? 
+        const storeData = store.getState().form.reactApp === undefined ?
         {} : store.getState().form.reactApp.values
 
 
@@ -23,15 +23,10 @@ class ThirdPage extends Component {
             user_data: {
                 email: storeData.email,
                 password: storeData.password,
-                date_of_birth: 'date',
+                date_of_birth: `${storeData.dd}/${storeData.mm}/${storeData.yyyy}`,
                 gender: storeData.gender,
                 how_hear_about_us: storeData.selected_answer || null
             }
-        }
-
-
-        const showResult = () => {
-            console.log(JSON.stringify(finish))
         }
 
 
@@ -45,7 +40,12 @@ class ThirdPage extends Component {
                     <div className="circle">
                         <div className={gender}></div>
                     </div>
-                    <button className="dashboard" onClick={showResult}>Go to Dashboard ➡</button>
+                    <button
+                        className="dashboard"
+                        onClick={() => console.log(JSON.stringify(finish))}
+                    >
+                        Go to Dashboard ➡
+                    </button>
                 </Body>
                 <Footer>
                     <Link to='/second' className="link link-silver">Back</Link>
