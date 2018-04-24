@@ -58,7 +58,7 @@ class FirstPage extends Component {
 }
 
 export default reduxForm({
-    form: 'form',
+    form: 'reactApp',
     destroyOnUnmount: false,
     validate
 })(FirstPage)

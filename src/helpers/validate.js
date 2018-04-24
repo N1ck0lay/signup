@@ -58,6 +58,9 @@ const validate = values => {
     }
 
 
+    if (!values.gender) {
+        errors.gender = 'Choose your gender';
+    }
 
     // console.log('values', { "year": Number(values.yyyy), "month": Number(values.mm) - 1, "day": Number(values.dd) })
     // const userAge = new Date(values.yyyy, values.mm - 1, values.dd)
