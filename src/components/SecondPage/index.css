@@ -8,7 +8,7 @@
     display: none;
 }
 
-.gender {
+.second .gender {
     display: block;
     font-size: 12px;
     text-align: center;
@@ -18,7 +18,7 @@
     text-transform: uppercase;
 }
 
-.active {
+.second .active {
     color: white;
     background: blue;
 }

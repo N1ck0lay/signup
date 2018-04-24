@@ -45,21 +45,21 @@ const validate = values => {
 
 
     if (!values.yyyy) {
-        errors.yyyy = 'required';
+        errors.yyyy = 'required'
     } else if (values.yyyy < 1900 || values.yyyy > 2018) {
-        errors.yyyy = 'Are you sure?'
+        errors.yyyy = 'are you sure?'
     } else {
-        const userDateInput = new Date(`${values.yyyy}-${values.mm}-${values.dd}`);
+        const userDateInput = new Date(`${values.yyyy}-${values.mm}-${values.dd}`)
         console.log('Is valid?', moment(userDateInput).isValid())
-        const isAdult = moment(userDateInput, "YYYYMMDD").fromNow().split(' ')[0];
-        if (parseInt(isAdult) < 18) {
-            errors.yyyy = 'Not Adult';
+        const isAdult = moment(userDateInput, "YYYYMMDD").fromNow().split(' ')[0]
+        if (parseInt(isAdult, 10) < 18) {
+            errors.yyyy = 'must be 18 y.o. or more'
         }
     }
 
 
     if (!values.gender) {
-        errors.gender = 'Choose your gender';
+        errors.gender = 'Choose your gender'
     }
 
     // console.log('values', { "year": Number(values.yyyy), "month": Number(values.mm) - 1, "day": Number(values.dd) })

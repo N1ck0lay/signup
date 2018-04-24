@@ -9,13 +9,15 @@ import Footer from '../../common/Footer'
 
 import { store } from '../../index'
 
-// import './index.css'
+import './index.css'
 
 
 class ThirdPage extends Component {
     render() {
 
-        const storeData = store.getState().form.reactApp === undefined ? {} : store.getState().form.reactApp
+        const storeData = store.getState().form.reactApp === undefined ? 
+        {} : store.getState().form.reactApp.values
+
 
         const finish = {
             user_data: {
@@ -28,16 +30,26 @@ class ThirdPage extends Component {
         }
 
 
+        const showResult = () => {
+            console.log(JSON.stringify(finish))
+        }
+
+
+        let gender = storeData.gender
+
+
         return (
             <Box header="Thank you!">
                 <ProgressBar progress={100} />
                 <Body>
-                    <h1>Thanks</h1>
-                    <button>Go to Dashboard</button>
+                    <div className="circle">
+                        <div className={gender}></div>
+                    </div>
+                    <button className="dashboard" onClick={showResult}>Go to Dashboard ➡</button>
                 </Body>
                 <Footer>
-                <Link to='/second'>Back</Link>
-                <div></div>
+                    <Link to='/second' className="link link-silver">Back</Link>
+                    <div></div>
                 </Footer>
             </Box>
         )
