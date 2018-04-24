@@ -3,7 +3,9 @@ import moment from 'moment';
 
 const validate = values => {
     const errors = {}
+
     const mailRegEx = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+
 
     // first page validation
     if (!values.email) {
@@ -62,17 +64,7 @@ const validate = values => {
         errors.gender = 'choose your gender'
     }
 
-    // console.log('values', { "year": Number(values.yyyy), "month": Number(values.mm) - 1, "day": Number(values.dd) })
-    // const userAge = new Date(values.yyyy, values.mm - 1, values.dd)
-    // console.log('age', userAge)
-    // let d = new Date()
-    // let z = d - userAge
-    // console.log('z', z)
-
-    // // var time = new Date().getTime();
-    // var date = new Date(z);
-    // console.log(date.toString());
-
+    
     return errors
 }
 

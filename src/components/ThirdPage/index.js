@@ -7,7 +7,7 @@ import ProgressBar from '../../common/ProgressBar'
 import Body from '../../common/Body'
 import Footer from '../../common/Footer'
 
-import { store } from '../../index'
+import { store } from '../../redux/reducers'
 
 import './index.css'
 
