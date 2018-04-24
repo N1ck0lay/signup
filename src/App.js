@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom'
+import { MemoryRouter, Switch, Route, Redirect } from 'react-router-dom'
 
 import { connect } from 'react-redux'
 
@@ -15,7 +15,7 @@ class App extends Component {
     render() {
         return (
             <div className="App">
-                <BrowserRouter>
+                <MemoryRouter>
                     <Switch>
                         <Route exact path='/' component={FirstPage} />
                         <Route path='/second' component={SecondPage} />
@@ -23,7 +23,7 @@ class App extends Component {
                         <Route path='/404' component={Page404} />
                         <Redirect to="/404" />
                     </Switch>
-                </BrowserRouter>
+                </MemoryRouter>
             </div>
         )
     }
