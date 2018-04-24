@@ -13,7 +13,6 @@ import './App.css';
 
 class App extends Component {
     render() {
-        // console.log('testVar', this.props.testVar.test)
         return (
             <div className="App">
                 <BrowserRouter>
@@ -30,8 +29,4 @@ class App extends Component {
     }
 }
 
-export default connect(
-    state => ({
-        testVar: state
-    })
-)(App);
+export default connect()(App);

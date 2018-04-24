@@ -2,6 +2,17 @@
 
 }
 
+.link {
+    text-decoration: none;
+    color: blue;
+    margin: 0 25px;
+    align-self: center;
+}
+
+.link-silver {
+    color: silver;
+}
+
 .error {
     color: red;
 }

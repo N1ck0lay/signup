@@ -2,14 +2,27 @@
 
 } */
 
-.second input[type="number"] {
-    width: 100%;
-    height: 30px;
-    text-align: center;
-}   
-
 .second .input {
     flex: 1 1 33%;
     height: 30px;
     margin: 5px 0 50px;
+}
+
+.second input[type="radio"] {
+    display: none;
+}
+
+.gender {
+    display: block;
+    font-size: 12px;
+    text-align: center;
+    width: 33%;
+    border: 1px solid silver;
+    padding: 6px;
+    text-transform: uppercase;
+}
+
+.active {
+    color: white;
+    background: blue;
 }

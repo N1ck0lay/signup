@@ -8,14 +8,16 @@ import Input from '../../common/Input'
 import Body from '../../common/Body'
 import Footer from '../../common/Footer'
 
-import validate from '../../assets/validate'
+import validate from '../../helpers/validate'
 
 import './index.css'
 
 
 class FirstPage extends Component {
     render() {
+
         const { handleSubmit, invalid } = this.props
+        
         return (
             <Box header="Signup">
                 <ProgressBar progress={invalid ? 0 : 33} />
@@ -47,7 +49,8 @@ class FirstPage extends Component {
                 </Body>
                 <Footer>
                     <div></div>
-                    {invalid ? '' : <Link to='/second'>Next</Link>}
+                    <Link to='/second' className="link">Next &rarr;</Link>
+                    {/* {invalid ? '' : <Link to='/second' className="link">Next &rarr;</Link>} */}
                 </Footer>
             </Box>
         )
@@ -55,7 +58,7 @@ class FirstPage extends Component {
 }
 
 export default reduxForm({
-    form: 'signupForm',
+    form: 'form',
     destroyOnUnmount: false,
     validate
 })(FirstPage)

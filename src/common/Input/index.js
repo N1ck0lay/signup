@@ -1,10 +1,9 @@
-import React, { Component } from 'react'
+import React from 'react'
 
 import './index.css'
 
 
-const Input = ({ input, meta, label, type, placeholder }) => {
-    // console.log('meta', meta)
+const Input = ({ input, meta, label, type }) => {
     return (
         <div className="input">
             <label className={meta.error && meta.touched && !meta.active ? 'error' : ''}>
@@ -14,7 +13,10 @@ const Input = ({ input, meta, label, type, placeholder }) => {
                     !meta.active ? meta.error : label
                 }
             </label>
-            <input {...input} type={type} placeholder={placeholder} />
+            <input
+                {...input}
+                type={type}
+            />
         </div>
     )
 }

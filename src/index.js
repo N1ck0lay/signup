@@ -9,13 +9,8 @@ import App from './App'
 
 import './index.css'
 
-// const store = createStore(
-//     reducer,
-//     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-// )
 
-const reducer = (state = { test: 'reducer-test-sms' }, action) => { return state }
-
+const reducer = (state = {}, action) => { return state }
 
 
 const allReducers = combineReducers({
