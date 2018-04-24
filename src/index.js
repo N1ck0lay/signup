@@ -5,6 +5,7 @@ import { Provider } from 'react-redux'
 import { store } from './redux/reducers'
 import App from './App'
 
+import './animate.css'
 import './index.css'
 
 

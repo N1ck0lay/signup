@@ -37,18 +37,18 @@ class ThirdPage extends Component {
             <Box header="Thank you!">
                 <ProgressBar progress={100} />
                 <Body>
-                    <div className="circle">
+                    <div className="circle animated zoomIn">
                         <div className={gender}></div>
                     </div>
                     <button
-                        className="dashboard"
+                        className="dashboard animated swing"
                         onClick={() => console.log(JSON.stringify(finish))}
                     >
                         Go to Dashboard ➡
                     </button>
                 </Body>
                 <Footer>
-                    <Link to='/second' className="link link-silver">Back</Link>
+                    <Link to='/second' className="link link-silver animated tada">Back</Link>
                     <div></div>
                 </Footer>
             </Box>

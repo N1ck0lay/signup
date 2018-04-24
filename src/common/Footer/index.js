@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 
 import './index.css'
 
@@ -13,5 +14,11 @@ class Footer extends Component {
         )
     }
 }
+
+
+Footer.propTypes = {
+    children: PropTypes.node
+}
+
 
 export default Footer

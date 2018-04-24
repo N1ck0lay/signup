@@ -35,9 +35,9 @@ class SecondPage extends Component {
                     </form>
                 </Body>
                 <Footer>
-                    <Link to='/' className="link link-silver">Back</Link>
-                    {invalid ? '' : <Link to='/third' className="link">Next ➡</Link>}
-                    {/* <Link to='/third' className="link">Next &rarr;</Link> */}
+                    <Link to='/' className="link link-silver animated tada">Back</Link>
+                    {invalid ? '' : <Link to='/third' className="link animated tada">Next ➡</Link>}
+                    {/* <Link to='/third' className="link animated tada">Next &rarr;</Link> */}
                 </Footer>
             </Box>
         )

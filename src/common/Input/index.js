@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 import './index.css'
 
@@ -13,5 +14,11 @@ const Input = ({ meta: { error, touched, active }, input, label, type }) => {
         </div>
     )
 }
+
+Input.propTypes = {
+    label: PropTypes.string,
+    type: PropTypes.string
+}
+
 
 export default Input

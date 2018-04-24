@@ -7,4 +7,6 @@
 .progress {
     background: blue;
     height: 6px;
+    transition: 0.5s ease;
+    transition-property: width;
 }

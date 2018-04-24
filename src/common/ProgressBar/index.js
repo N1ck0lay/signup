@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+
 import './index.css'
 
 
@@ -12,5 +14,11 @@ class ProgressBar extends Component {
         )
     }
 }
+
+
+ProgressBar.propTypes = {
+    progress: PropTypes.node
+}
+
 
 export default ProgressBar
