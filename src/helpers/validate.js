@@ -1,18 +1,28 @@
 import moment from 'moment';
 
-import { currentYear } from './dates'
+import { currentYear, mailRegExp, stringDateFormat } from './variables'
 
 
 const validate = values => {
     const errors = {}
+    const stringDateFormat = `${values.yyyy}-${values.mm}-${values.dd}`
 
-    const mailRegEx = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
-    
+
+    const userDateInput = new Date(stringDateFormat)
+    let isAdult = moment().diff(userDateInput, 'years', false)
+    console.log('isAdult', isAdult)
+
+    //
+
+    let dateString = moment(stringDateFormat)
+    let isValideDate = moment(dateString).isValid();
+    console.log('isValideDate', isValideDate)
+
 
     // first page validation
     if (!values.email) {
         errors.email = 'email is required'
-    } else if (!values.email.match(mailRegEx)) {
+    } else if (!values.email.match(mailRegExp)) {
         errors.email = 'invalid email'
     }
 
@@ -32,7 +42,7 @@ const validate = values => {
 
 
 
-
+    
     // second page validation
     if (!values.dd) {
         errors.dd = 'required';
@@ -54,15 +64,10 @@ const validate = values => {
         errors.yyyy = 'required'
     } else if (values.yyyy < 1900 || values.yyyy > currentYear) {
         errors.yyyy = 'invalid year'
-    } else {
-
-        const userDateInput = new Date(`${values.yyyy}-${values.mm}-${values.dd}`)
-        console.log('Is valid?', moment(userDateInput).isValid())
-
-        const isAdult = moment(userDateInput, "YYYYMMDD").fromNow().split(' ')[0]
-        if (parseInt(isAdult, 10) < 18) {
-            errors.yyyy = 'must be 18 y.o. or more'
-        }
+    } else if (parseInt(isAdult, 10) < 18) {
+        errors.yyyy = 'must be 18 y.o. or more'
+    } else if (!isValideDate) {
+        errors.yyyy = 'invalid date'
     }
 
 
@@ -70,7 +75,7 @@ const validate = values => {
         errors.gender = 'choose your gender'
     }
 
-    
+
     return errors
 }
 

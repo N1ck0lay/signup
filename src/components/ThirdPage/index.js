@@ -21,51 +21,21 @@ class ThirdPage extends Component {
         {} : store.getState().form.reactApp.values
 
 
-        let dateString = moment(`${storeData.yyyy}-${storeData.mm}-${storeData.dd}`)
-        let isValideDate = moment(dateString).isValid();
+        const storeDataString = `${storeData.mm}/${storeData.dd}/${storeData.yyyy}`
+        const dateJS = moment(storeDataString).format('X')
+        const dateHuman =  moment(storeDataString).format('Do MMM YYYY')
 
-        console.log('isValideDate', isValideDate)
 
-
-        // const date_of_birth2 = moment(`${storeData.dd}/${storeData.mm}/${storeData.yyyy}`).format('X')
-        
-        let a = moment(`${storeData.mm}/${storeData.dd}/${storeData.yyyy}`)
-
-        // console.log('a', a)
-
-        a.format()
-
-        // console.log('a.format', a)
-        let date_of_birth2 = a.isValid()
-        
-        let tempData
-        if (date_of_birth2) {
-            tempData = a.format('X')
-        } else {
-            tempData = "Invalid date"
-        }
-        
-        // console.log('date_of_birth2', date_of_birth2)
         const finish = {
             user_data: {
                 email: storeData.email,
                 password: storeData.password,
-                date_of_birth: tempData,
+                date_of_birth_js: dateJS,
+                date_of_birth_human: dateHuman,
                 gender: storeData.gender,
                 how_hear_about_us: storeData.selected_answer || null
             }
         }
-
-
-        // const finish = {
-        //     user_data: {
-        //         email: storeData.email,
-        //         password: storeData.password,
-        //         date_of_birth: `${storeData.dd}/${storeData.mm}/${storeData.yyyy}`,
-        //         gender: storeData.gender,
-        //         how_hear_about_us: storeData.selected_answer || null
-        //     }
-        // }
 
 
         let gender = storeData.gender

@@ -2,7 +2,7 @@ import React from 'react'
 import { Field } from 'redux-form'
 
 import InputDate from '../InputDate'
-import { currentYear } from '../../helpers/dates'
+import { currentYear } from '../../helpers/variables'
 
 import './index.css'
 

@@ -18,8 +18,6 @@ import './index.css'
 class SecondPage extends Component {
     render() {
 
-
-
         const { handleSubmit, invalid } = this.props
 
         return (
@@ -37,7 +35,6 @@ class SecondPage extends Component {
                 <Footer>
                     <Link to='/' className="link link-silver animated tada">Back</Link>
                     {invalid ? '' : <Link to='/third' className="link animated tada">Next ➡</Link>}
-                    {/* <Link to='/third' className="link animated tada">Next &rarr;</Link> */}
                 </Footer>
             </Box>
         )
