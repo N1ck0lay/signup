@@ -1,6 +1,6 @@
 import moment from 'moment';
 
-import { currentYear, mailRegExp, stringDateFormat } from './variables'
+import { currentYear, mailRegExp } from './variables'
 
 
 const validate = values => {
@@ -10,13 +10,12 @@ const validate = values => {
 
     const userDateInput = new Date(stringDateFormat)
     let isAdult = moment().diff(userDateInput, 'years', false)
-    console.log('isAdult', isAdult)
+    // console.log('isAdult', isAdult)
 
-    //
 
     let dateString = moment(stringDateFormat)
     let isValideDate = moment(dateString).isValid();
-    console.log('isValideDate', isValideDate)
+    // console.log('isValideDate', isValideDate)
 
 
     // first page validation
@@ -42,7 +41,7 @@ const validate = values => {
 
 
 
-    
+
     // second page validation
     if (!values.dd) {
         errors.dd = 'required';

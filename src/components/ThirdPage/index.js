@@ -22,6 +22,7 @@ class ThirdPage extends Component {
 
 
         const storeDataString = `${storeData.mm}/${storeData.dd}/${storeData.yyyy}`
+
         const dateJS = moment(storeDataString).format('X')
         const dateHuman =  moment(storeDataString).format('Do MMM YYYY')
 
@@ -40,7 +41,9 @@ class ThirdPage extends Component {
 
         let gender = storeData.gender
 
-        console.log('storeData', storeData)
+        const toConsole = () => console.log(JSON.stringify(finish))
+
+        // console.log('storeData', storeData)
         return (
             <Box header="Thank you!">
                 <ProgressBar progress={100} />
@@ -50,7 +53,7 @@ class ThirdPage extends Component {
                     </div>
                     <button
                         className="dashboard animated swing"
-                        onClick={() => console.log(JSON.stringify(finish))}
+                        onClick={toConsole}
                     >
                         Go to Dashboard ➡
                     </button>
