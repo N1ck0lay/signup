@@ -13,7 +13,6 @@ const InputDate = ({ meta: { error, touched, active }, input, type, placeholder,
                 placeholder={placeholder}
                 min={min}
                 max={max}
-                required
             />
             <label className={error && touched && !active ? 'error lower-label' : ''}>
                 {

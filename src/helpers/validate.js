@@ -1,11 +1,13 @@
 import moment from 'moment';
 
+import { currentYear } from './dates'
+
 
 const validate = values => {
     const errors = {}
 
     const mailRegEx = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
-
+    
 
     // first page validation
     if (!values.email) {
@@ -43,16 +45,20 @@ const validate = values => {
         errors.mm = 'required';
     } else if (values.mm < 1 || values.mm > 12) {
         errors.mm = 'must be between 1 and 12'
+    } else if (values.mm.length < 2) {
+        values.mm = `0${values.mm}`
     }
 
 
     if (!values.yyyy) {
         errors.yyyy = 'required'
-    } else if (values.yyyy < 1900 || values.yyyy > 2018) {
+    } else if (values.yyyy < 1900 || values.yyyy > currentYear) {
         errors.yyyy = 'invalid year'
     } else {
+
         const userDateInput = new Date(`${values.yyyy}-${values.mm}-${values.dd}`)
         console.log('Is valid?', moment(userDateInput).isValid())
+
         const isAdult = moment(userDateInput, "YYYYMMDD").fromNow().split(' ')[0]
         if (parseInt(isAdult, 10) < 18) {
             errors.yyyy = 'must be 18 y.o. or more'

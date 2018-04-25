@@ -2,11 +2,9 @@ import React from 'react'
 import { Field } from 'redux-form'
 
 import InputDate from '../InputDate'
+import { currentYear } from '../../helpers/dates'
 
 import './index.css'
-
-const date = new Date();
-const currentYear = date.getFullYear();
 
 
 const BirthDate = () => {
