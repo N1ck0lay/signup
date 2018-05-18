@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { MemoryRouter, Switch, Route, Redirect } from 'react-router-dom'
 
-import { connect } from 'react-redux'
-
 import FirstPage from './components/FirstPage'
 import SecondPage from './components/SecondPage'
 import ThirdPage from './components/ThirdPage'
@@ -29,4 +27,4 @@ class App extends Component {
     }
 }
 
-export default connect()(App)
+export default App

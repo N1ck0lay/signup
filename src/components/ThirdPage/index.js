@@ -68,6 +68,6 @@ class ThirdPage extends Component {
 }
 
 export default reduxForm({
-    form: 'reactApp',
+    form: 'signup',
     destroyOnUnmount: false
 })(ThirdPage)

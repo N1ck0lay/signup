@@ -42,7 +42,7 @@ class SecondPage extends Component {
 }
 
 export default reduxForm({
-    form: 'reactApp',
+    form: 'signup',
     destroyOnUnmount: false,
     validate
 })(SecondPage)
