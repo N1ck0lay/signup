@@ -17,8 +17,8 @@ import './index.css'
 class ThirdPage extends Component {
     render() {
 
-        const storeData = store.getState().form.reactApp === undefined ?
-        {} : store.getState().form.reactApp.values
+        const storeData = store.getState().form.signup === undefined ?
+        {} : store.getState().form.signup.values
 
 
         const storeDataString = `${storeData.mm}/${storeData.dd}/${storeData.yyyy}`
