@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { reduxForm } from 'redux-form'
+import { reduxForm, formValueSelector } from 'redux-form'
+import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 
 import Box from '../../common/Box'
@@ -18,13 +19,13 @@ class ThirdPage extends Component {
     render() {
 
         const storeData = store.getState().form.signup === undefined ?
-        {} : store.getState().form.signup.values
+            {} : store.getState().form.signup.values
 
 
         const storeDataString = `${storeData.mm}/${storeData.dd}/${storeData.yyyy}`
 
         const dateJS = moment(storeDataString).format('X')
-        const dateHuman =  moment(storeDataString).format('Do MMM YYYY')
+        const dateHuman = moment(storeDataString).format('Do MMM YYYY')
 
 
         const finish = {
@@ -44,6 +45,7 @@ class ThirdPage extends Component {
         const toConsole = () => console.log(JSON.stringify(finish))
 
         // console.log('storeData', storeData)
+        console.log('email', this.props.email)
         return (
             <Box header="Thank you!">
                 <ProgressBar progress={100} />
@@ -67,7 +69,24 @@ class ThirdPage extends Component {
     }
 }
 
-export default reduxForm({
+// export default reduxForm({
+//     form: 'signup',
+//     destroyOnUnmount: false
+// })(ThirdPage)
+
+ThirdPage = reduxForm({
     form: 'signup',
     destroyOnUnmount: false
 })(ThirdPage)
+
+const selector = formValueSelector('signup')
+
+ThirdPage = connect(state => {
+    const email = selector(state, 'email')
+
+    return {
+        email
+    }
+})(ThirdPage)
+
+export default ThirdPage
