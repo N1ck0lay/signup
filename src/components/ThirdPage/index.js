@@ -2,50 +2,59 @@ import React, { Component } from 'react'
 import { reduxForm, formValueSelector } from 'redux-form'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
+import moment from 'moment'
 
 import Box from '../../common/Box'
 import ProgressBar from '../../common/ProgressBar'
 import Body from '../../common/Body'
 import Footer from '../../common/Footer'
 
-import { store } from '../../redux/reducers'
-
-import moment from 'moment';
-
 import './index.css'
 
 
 class ThirdPage extends Component {
-    render() {
 
-        const storeData = store.getState().form.signup === undefined ?
-            {} : store.getState().form.signup.values
+    // this component made with new syntax, without "constructor/super"
 
+    valuesToConsole = this.valuesToConsole.bind(this)
 
-        const storeDataString = `${storeData.mm}/${storeData.dd}/${storeData.yyyy}`
+    valuesToConsole() {
+        const {
+            email,
+            password,
+            dd,
+            mm,
+            yyyy,
+            gender,
+            selected_answer
+        } = this.props.formValues
+
+        const storeDataString = `${mm}/${dd}/${yyyy}`
 
         const dateJS = moment(storeDataString).format('X')
         const dateHuman = moment(storeDataString).format('Do MMM YYYY')
 
-
-        const finish = {
+        const consoleData = {
             user_data: {
-                email: storeData.email,
-                password: storeData.password,
+                email,
+                password,
                 date_of_birth_js: dateJS,
                 date_of_birth_human: dateHuman,
-                gender: storeData.gender,
-                how_hear_about_us: storeData.selected_answer || null
+                gender,
+                how_hear_about_us: selected_answer || null
             }
         }
 
+        console.log(JSON.stringify(consoleData))
+    }
 
-        let gender = storeData.gender
+    render() {
 
-        const toConsole = () => console.log(JSON.stringify(finish))
+        // we can access redux state in this way, but it's wrong :)
+        // const storeData = store.getState().form.signup
 
-        // console.log('storeData', storeData)
-        console.log('email', this.props.email)
+        const { gender } = this.props.formValues
+
         return (
             <Box header="Thank you!">
                 <ProgressBar progress={100} />
@@ -55,7 +64,7 @@ class ThirdPage extends Component {
                     </div>
                     <button
                         className="dashboard animated swing"
-                        onClick={toConsole}
+                        onClick={this.valuesToConsole}
                     >
                         Go to Dashboard ➡
                     </button>
@@ -69,11 +78,6 @@ class ThirdPage extends Component {
     }
 }
 
-// export default reduxForm({
-//     form: 'signup',
-//     destroyOnUnmount: false
-// })(ThirdPage)
-
 ThirdPage = reduxForm({
     form: 'signup',
     destroyOnUnmount: false
@@ -81,12 +85,8 @@ ThirdPage = reduxForm({
 
 const selector = formValueSelector('signup')
 
-ThirdPage = connect(state => {
-    const email = selector(state, 'email')
-
-    return {
-        email
-    }
-})(ThirdPage)
+ThirdPage = connect(state => ({
+    formValues: selector(state, 'email', 'password', 'dd', 'mm', 'yyyy', 'gender', 'selected_answer')
+}))(ThirdPage)
 
 export default ThirdPage
