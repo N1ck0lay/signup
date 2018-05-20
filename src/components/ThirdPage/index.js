@@ -29,10 +29,10 @@ class ThirdPage extends Component {
             selected_answer
         } = this.props.formValues
 
-        const storeDataString = `${mm}/${dd}/${yyyy}`
+        const storeDataString = `${mm}-${dd}-${yyyy}`
 
         const dateJS = moment(storeDataString).format('X')
-        const dateHuman = moment(storeDataString).format('Do MMM YYYY')
+        const dateHuman = moment(storeDataString).format('Do-MMM-YYYY')
 
         const consoleData = {
             user_data: {

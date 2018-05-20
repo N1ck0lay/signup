@@ -1,4 +1,4 @@
-import moment from 'moment';
+import moment from 'moment'
 
 import { currentYear, mailRegExp } from './variables'
 
@@ -13,8 +13,8 @@ const validate = values => {
     // console.log('isAdult', isAdult)
 
 
-    let dateString = moment(stringDateFormat)
-    let isValideDate = moment(dateString).isValid();
+    let dateString = moment(stringDateFormat, "YYYY-MM-DD")
+    let isValideDate = moment(dateString).isValid()
     // console.log('isValideDate', isValideDate)
 
 
@@ -44,14 +44,14 @@ const validate = values => {
 
     // second page validation
     if (!values.dd) {
-        errors.dd = 'required';
+        errors.dd = 'required'
     } else if (values.dd < 1 || values.dd > 31) {
         errors.dd = 'must be between 1 and 31'
     }
 
 
     if (!values.mm) {
-        errors.mm = 'required';
+        errors.mm = 'required'
     } else if (values.mm < 1 || values.mm > 12) {
         errors.mm = 'must be between 1 and 12'
     } else if (values.mm.length < 2) {
@@ -66,7 +66,7 @@ const validate = values => {
     } else if (parseInt(isAdult, 10) < 18) {
         errors.yyyy = 'must be 18 y.o. or more'
     } else if (!isValideDate) {
-        errors.yyyy = 'invalid date'
+        errors.yyyy = 'incorrect date'
     }
 
 
