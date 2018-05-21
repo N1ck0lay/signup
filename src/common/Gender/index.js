@@ -9,21 +9,21 @@ const toggleClass = (i) => {
     const menu = document.querySelectorAll('.gender');
 
     for (let cnt = 0; cnt < menu.length; cnt++) {
-      menu[cnt].classList.remove('active')
+        menu[cnt].classList.remove('active')
     }
 
     switch (i) {
-      case 0:
-        menu[i].classList.add('active')
-        break
-      case 1:
-        menu[i].classList.add('active')
-        break
-      case 2:
-        menu[i].classList.add('active')
-        break
-      default:
-        return
+        case 0:
+            menu[i].classList.add('active')
+            break
+        case 1:
+            menu[i].classList.add('active')
+            break
+        case 2:
+            menu[i].classList.add('active')
+            break
+        default:
+            return
     }
 
 }
@@ -37,8 +37,9 @@ const genderError = ({ meta: { touched, error } }) => {
 const Gender = () => {
     return (
         <div>
+
             <label className="center">
-                <Field name="gender" component={genderError}/>
+                <Field name="gender" component={genderError} />
             </label>
 
             <div className="flex-container">
