@@ -15,11 +15,7 @@ const InputDate = ({ meta: { error, touched, active }, input, type, placeholder,
                 max={max}
             />
             <label className={error && touched && !active ? 'error lower-label' : ''}>
-                {
-                    error &&
-                    touched &&
-                    !active ? error : ''
-                }
+                {error && touched && !active ? error : ''}
             </label>
         </div>
     )

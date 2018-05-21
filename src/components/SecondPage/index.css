@@ -4,27 +4,6 @@
     margin: 5px 0 50px;
 }
 
-.second input[type="radio"] {
-    display: none;
-}
-
-.second .gender {
-    display: block;
-    font-size: 12px;
-    text-align: center;
-    width: 33.33%;
-    height: 30px;
-    border: 1px solid silver;
-    padding: 6px;
-    text-transform: uppercase;
-    cursor: pointer;
-}
-
-.second .active {
-    color: white;
-    background: blue;
-}
-
 .second p {
     font-size: 14px;
 }

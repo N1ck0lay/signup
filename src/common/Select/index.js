@@ -4,16 +4,13 @@ import { Field } from 'redux-form';
 import './index.css'
 
 
-const optionsArray = ['From Google', 'From Facebook', 'From Alians :-)'];
+const selectOptions = ['From Google', 'From Facebook', 'From Alians :-)'];
 
 const SelectElement = ({ input }) => (
     <div className="select">
         <select {...input}>
             <option></option>
-            {optionsArray.map(value => <option
-                value={value}
-                key={value}
-            >
+            {selectOptions.map(value => <option value={value} key={value}>
                 {value}
             </option>
             )}

@@ -50,7 +50,7 @@ class ThirdPage extends Component {
 
     render() {
 
-        // we can access redux state in this way, but it's wrong :)
+        // we can access redux state in this way, but it's incorrect :)
         // const storeData = store.getState().form.signup
 
         const { gender } = this.props.formValues
