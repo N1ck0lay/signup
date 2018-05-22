@@ -7,7 +7,7 @@ import './index.css'
 
 const toggleClass = (i) => {
 
-    const menu = document.querySelectorAll('.gender');
+    const menu = document.querySelectorAll('.gender')
 
     for (let cnt = 0; cnt < menu.length; cnt++) {
         menu[cnt].classList.remove('active')

@@ -45,7 +45,8 @@ class FirstPage extends Component {
 
 
 FirstPage.propTypes = {
-    invalid: PropTypes.bool
+    invalid: PropTypes.bool,
+    handleSubmit: PropTypes.func
 }
 
 

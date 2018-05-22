@@ -1,19 +1,19 @@
-import React, { Component } from 'react';
-import { MemoryRouter, Switch, Route, Redirect } from 'react-router-dom'
+import React, { Component } from 'react'
+import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom'
 
 import FirstPage from './components/FirstPage'
 import SecondPage from './components/SecondPage'
 import ThirdPage from './components/ThirdPage'
 import Page404 from './components/404'
 
-import './App.css';
+import './App.css'
 
 
 class App extends Component {
     render() {
         return (
             <div className="App">
-                <MemoryRouter>
+                <BrowserRouter>
                     <Switch>
                         <Route exact path='/' component={FirstPage} />
                         <Route path='/second' component={SecondPage} />
@@ -21,10 +21,11 @@ class App extends Component {
                         <Route path='/404' component={Page404} />
                         <Redirect to="/404" />
                     </Switch>
-                </MemoryRouter>
+                </BrowserRouter>
             </div>
         )
     }
 }
+
 
 export default App
