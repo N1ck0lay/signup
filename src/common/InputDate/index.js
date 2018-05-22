@@ -21,7 +21,10 @@ const InputDate = ({ meta: { error, touched, active }, input, type, placeholder,
     )
 }
 
+
 InputDate.propTypes = {
+    meta: PropTypes.any,
+    input: PropTypes.object,
     type: PropTypes.string,
     placeholder: PropTypes.string,
     min: PropTypes.node,

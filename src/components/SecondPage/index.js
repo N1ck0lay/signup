@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import { reduxForm } from 'redux-form'
 import { Link } from 'react-router-dom'
 
@@ -22,7 +23,9 @@ class SecondPage extends Component {
 
         return (
             <Box header="Signup">
+
                 <ProgressBar progress={invalid ? 33 : 66} />
+
                 <Body>
                     <form onSubmit={handleSubmit}>
                         <div className="second">
@@ -32,14 +35,23 @@ class SecondPage extends Component {
                         </div>
                     </form>
                 </Body>
+
                 <Footer>
                     <Link to='/' className="link link-silver animated tada">Back</Link>
                     {invalid ? '' : <Link to='/third' className="link animated tada">Next ➡</Link>}
                 </Footer>
+                
             </Box>
         )
     }
 }
+
+
+SecondPage.propTypes = {
+    handleSubmit: PropTypes.func,
+    invalid: PropTypes.bool
+}
+
 
 export default reduxForm({
     form: 'signup',

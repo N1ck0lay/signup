@@ -15,7 +15,10 @@ const Input = ({ meta: { error, touched, active }, input, label, type }) => {
     )
 }
 
+
 Input.propTypes = {
+    meta: PropTypes.any,
+    input: PropTypes.object,
     label: PropTypes.string,
     type: PropTypes.string
 }

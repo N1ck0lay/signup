@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import { reduxForm } from 'redux-form'
 import { Link } from 'react-router-dom'
 
@@ -16,11 +17,13 @@ import './index.css'
 class FirstPage extends Component {
     render() {
 
-        const { handleSubmit, invalid } = this.props
+        const { invalid, handleSubmit } = this.props
 
         return (
             <Box header="Signup">
+
                 <ProgressBar progress={invalid ? 0 : 33} />
+
                 <Body>
                     <div className="first">
                         <form onSubmit={handleSubmit}>
@@ -28,15 +31,23 @@ class FirstPage extends Component {
                         </form>
                     </div>
                 </Body>
+
                 <Footer>
                     <div></div>
-                    {/* <Link to='/second' className="link animated tada">Next ➡</Link> */}
-                    {invalid ? '' : <Link to='/second' className="link animated tada">Next ➡</Link>}
+                    <Link to='/second' className="link animated tada">Next ➡</Link>
+                    {/* {invalid ? '' : <Link to='/second' className="link animated tada">Next ➡</Link>} */}
                 </Footer>
+
             </Box>
         )
     }
 }
+
+
+FirstPage.propTypes = {
+    invalid: PropTypes.bool
+}
+
 
 export default reduxForm({
     form: 'signup',

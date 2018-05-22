@@ -1,22 +1,30 @@
 import React from 'react'
-import { Field } from 'redux-form';
+import PropTypes from 'prop-types'
+import { Field } from 'redux-form'
+
+import { selectOptions } from '../../helpers/variables'
 
 import './index.css'
 
 
-const selectOptions = ['From Google', 'From Facebook', 'From Alians :-)'];
+const SelectElement = ({ input }) => {
+    return (
+        <div className="select">
+            <select {...input}>
+                <option></option>
+                {selectOptions.map(value => <option value={value} key={value}>
+                    {value}
+                </option>
+                )}
+            </select>
+        </div>
+    )
+}
 
-const SelectElement = ({ input }) => (
-    <div className="select">
-        <select {...input}>
-            <option></option>
-            {selectOptions.map(value => <option value={value} key={value}>
-                {value}
-            </option>
-            )}
-        </select>
-    </div>
-);
+
+SelectElement.propTypes = {
+    input: PropTypes.object
+}
 
 
 const Select = () => {

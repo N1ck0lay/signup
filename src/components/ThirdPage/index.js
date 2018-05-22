@@ -14,7 +14,7 @@ import './index.css'
 
 class ThirdPage extends Component {
 
-    // this component made with new syntax, without "constructor/super"
+    // this component made with new React syntax - without "constructor/super"
 
     valuesToConsole = this.valuesToConsole.bind(this)
 
@@ -49,15 +49,16 @@ class ThirdPage extends Component {
     }
 
     render() {
-
-        // we can access redux state in this way, but it's incorrect :)
+        // we can access redux store in this way, but it's incorrect :)
         // const storeData = store.getState().form.signup
 
         const { gender } = this.props.formValues
 
         return (
             <Box header="Thank you!">
+
                 <ProgressBar progress={100} />
+
                 <Body>
                     <div className="circle animated zoomIn">
                         <div className={gender}></div>
@@ -69,15 +70,19 @@ class ThirdPage extends Component {
                         Go to Dashboard ➡
                     </button>
                 </Body>
+
                 <Footer>
                     <Link to='/second' className="link link-silver animated tada">Back</Link>
                     <div></div>
                 </Footer>
+
             </Box>
         )
     }
 }
 
+
+// also code below can be moved to separate file - container
 ThirdPage = reduxForm({
     form: 'signup',
     destroyOnUnmount: false
@@ -88,5 +93,6 @@ const selector = formValueSelector('signup')
 ThirdPage = connect(state => ({
     formValues: selector(state, 'email', 'password', 'dd', 'mm', 'yyyy', 'gender', 'selected_answer')
 }))(ThirdPage)
+
 
 export default ThirdPage

@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { Field } from 'redux-form'
 
 import './index.css'
@@ -31,6 +32,11 @@ const toggleClass = (i) => {
 
 const genderError = ({ meta: { touched, error } }) => {
     return touched && error ? <p className="error">{error}</p> : <p>GENDER</p>
+}
+
+
+genderError.propTypes = {
+    meta: PropTypes.any
 }
 
 
