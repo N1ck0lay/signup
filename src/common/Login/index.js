@@ -6,7 +6,6 @@ import Input from '../Input'
 const Login = () => {
     return (
         <div>
-
             <Field
                 name="email"
                 label="email"
@@ -27,7 +26,6 @@ const Login = () => {
                 type="password"
                 component={Input}
             />
-            
         </div>
     )
 }

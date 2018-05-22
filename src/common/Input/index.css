@@ -1,6 +1,7 @@
 .input input {
     outline: 0;
 }
+
 .input label {
     text-transform: uppercase;
     font-size: 13px;
@@ -13,8 +14,6 @@
     border-bottom: 1.5px solid silver;
     transition: border-bottom 0.2s ease-out;
 }
-
-/* .input input[type="text"] */
 
 .input input[type="email"]:focus,
 .input input[type="password"]:focus {
