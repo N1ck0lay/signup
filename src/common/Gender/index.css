@@ -1,4 +1,4 @@
-.gender {
+.gender-label {
     display: block;
     font-size: 12px;
     text-align: center;
@@ -10,11 +10,12 @@
     cursor: pointer;
 }
 
-.active {
-    color: white;
-    background: blue;
+.gender-container input[type="radio"] {
+    display: none;
 }
 
-.gender input[type="radio"] {
-    display: none;
+.gender-container input[type="radio"]:checked + .gender-label {
+    color: white;
+    background: blue;
+    transition: all 0.5s;
 }

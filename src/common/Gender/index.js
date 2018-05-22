@@ -5,31 +5,6 @@ import { Field } from 'redux-form'
 import './index.css'
 
 
-const toggleClass = (i) => {
-
-    const menu = document.querySelectorAll('.gender')
-
-    for (let cnt = 0; cnt < menu.length; cnt++) {
-        menu[cnt].classList.remove('active')
-    }
-
-    switch (i) {
-        case 0:
-            menu[i].classList.add('active')
-            break
-        case 1:
-            menu[i].classList.add('active')
-            break
-        case 2:
-            menu[i].classList.add('active')
-            break
-        default:
-            return
-    }
-
-}
-
-
 const genderError = ({ meta: { touched, error } }) => {
     return touched && error ? <p className="error">{error}</p> : <p>GENDER</p>
 }
@@ -42,28 +17,21 @@ genderError.propTypes = {
 
 const Gender = () => {
     return (
-        <div>
+        <div className="gender-container">
 
             <label className="center">
                 <Field name="gender" component={genderError} />
             </label>
 
             <div className="flex-container">
-                <label className="gender" onClick={() => toggleClass(0)}>
-                    <Field name="gender" component="input" type="radio" value="male" />
-                    {' '}
-                    Male
-                </label>
-                <label className="gender" onClick={() => toggleClass(1)}>
-                    <Field name="gender" component="input" type="radio" value="female" />
-                    {' '}
-                    Female
-                </label>
-                <label className="gender" onClick={() => toggleClass(2)}>
-                    <Field name="gender" component="input" type="radio" value="unspecified" />
-                    {' '}
-                    Unspecified
-                </label>
+                <Field name="gender" component="input" type="radio" value="male" id="1" />
+                <label className="gender-label" htmlFor="1">Male</label>
+
+                <Field name="gender" component="input" type="radio" value="female" id="2" />
+                <label className="gender-label" htmlFor="2">Female</label>
+
+                <Field name="gender" component="input" type="radio" value="unspecified" id="3" />
+                <label className="gender-label" htmlFor="3">Unspecified</label>
             </div>
 
         </div>
