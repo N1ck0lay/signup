@@ -9,7 +9,7 @@ import './index.css'
 
 const BirthDate = () => {
     return (
-        <div className="birthDate">
+        <div className="birth-date">
             <p className="center">DATE OF BIRTH</p>
             <div className="flex-container">
                 <Field

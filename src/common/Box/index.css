@@ -1,10 +1,10 @@
 .box {
     position: relative;
-    margin: 50px auto;
+    margin: 75px auto;
     width: 350px;
     height: 500px;
     border: 1px solid silver;
-    border-radius: 10px;
+    border-radius: 7px;
 }
 
 .box h2 {
