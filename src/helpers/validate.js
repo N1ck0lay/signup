@@ -5,15 +5,15 @@ import { currentYear, mailRegExp } from './variables'
 
 const validate = values => {
     const errors = {}
-    const stringDateFormat = `${values.yyyy}-${values.mm}-${values.dd}`
+    const dateFormat = `${values.dd}-${values.mm}-${values.yyyy}`
 
 
-    const userDateInput = new Date(stringDateFormat)
+    const userDateInput = new Date(dateFormat)
     let isAdult = moment().diff(userDateInput, 'years', false)
     // console.log('isAdult', isAdult)
 
 
-    let dateString = moment(stringDateFormat, 'YYYY-MM-DD')
+    let dateString = moment(dateFormat, 'DD-MM-YYYY')
     let isValideDate = moment(dateString).isValid()
     // console.log('isValideDate', isValideDate)
 
