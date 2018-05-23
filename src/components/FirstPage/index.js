@@ -34,8 +34,8 @@ class FirstPage extends Component {
 
                 <Footer>
                     <div></div>
-                    <Link to='/second' className="link animated tada">Next ➡</Link>
-                    {/* {invalid ? '' : <Link to='/second' className="link animated tada">Next ➡</Link>} */}
+                    {/* <Link to='/second' className="link animated tada">Next ➡</Link> */}
+                    {invalid ? '' : <Link to='/second' className="link animated tada">Next ➡</Link>}
                 </Footer>
 
             </Box>
