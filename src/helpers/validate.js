@@ -13,7 +13,7 @@ const validate = values => {
     // console.log('isAdult', isAdult)
 
 
-    let dateString = moment(stringDateFormat, "YYYY-MM-DD")
+    let dateString = moment(stringDateFormat, 'YYYY-MM-DD')
     let isValideDate = moment(dateString).isValid()
     // console.log('isValideDate', isValideDate)
 

@@ -31,8 +31,8 @@ class ThirdPage extends Component {
 
         const storeDataString = `${mm}-${dd}-${yyyy}`
 
-        const dateJS = moment(storeDataString).format('X')
-        const dateHuman = moment(storeDataString).format('Do-MMM-YYYY')
+        const dateJS = moment(storeDataString, 'MM-DD-YYYY').format('X')
+        const dateHuman = moment(storeDataString, 'MM-DD-YYYY').format('Do-MMM-YYYY')
 
         const consoleData = {
             user_data: {
@@ -49,6 +49,7 @@ class ThirdPage extends Component {
     }
 
     render() {
+
         // we can access redux store in this way, but it's incorrect :)
         // const storeData = store.getState().form.signup
 
@@ -82,7 +83,7 @@ class ThirdPage extends Component {
 }
 
 
-// also code below can be moved to separate file - container
+// also code below can be moved to separate file - redux container
 ThirdPage = reduxForm({
     form: 'signup',
     destroyOnUnmount: false
